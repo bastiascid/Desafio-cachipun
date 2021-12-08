@@ -1,16 +1,16 @@
 
-  var veces = prompt("ingrese cantidad de veces que quieres jugar ")
+var veces = prompt("ingrese cantidad de veces que quieres jugar ")
 
-  const posibilities = ['piedra', 'papel', 'tijeras'];
-  const p1 = document.getElementById("player1").selectedIndex;
-  const p2 = posibilities[Math.floor(Math.random() * posibilities.length)];
+var posibilities = ['piedra', 'papel', 'tijeras'];
+var p1 = document.getElementsByClassName("player1");
+var p2 = posibilities[Math.floor(Math.random() * posibilities.length)];
+
+document.write(p1,p2)
 
 function play() {
 
-  for (let index = 0; index < veces; index++) {
-    const element = array[index];
-    
-    if (!p1) return;
+  do {
+        if (!p1) return;
     if (p1 === p2) {
       document.write('empate');
     } else if (p1 === "papel" && p2 === "piedra") {
@@ -22,5 +22,8 @@ function play() {
     } else {
       document.write("perdiste")
     }
-  }
+    veces = veces - 1;
+    document.write(" este es tu juego numero :" + veces);
+
+  } while (veces > 0);
 }
