@@ -1,15 +1,15 @@
 
+  var veces = prompt("ingrese cantidad de veces que quieres jugar ")
 
   const posibilities = ['piedra', 'papel', 'tijeras'];
-  const p1 = option.getElementById("player1").value;
+  const p1 = document.getElementById("player1").selectedIndex;
   const p2 = posibilities[Math.floor(Math.random() * posibilities.length)];
-
 
 function play() {
 
-  while (veces < juego) {
-    juego = veces - 1;
-
+  for (let index = 0; index < veces; index++) {
+    const element = array[index];
+    
     if (!p1) return;
     if (p1 === p2) {
       document.write('empate');
